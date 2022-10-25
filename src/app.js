@@ -1,6 +1,4 @@
-const express = require('express')
-
-// Iniciando o projeto
+const express = require('express');
 
 // ...
 
