@@ -1,10 +1,18 @@
 const express = require('express');
 
+const { handleError } = require('./middlewares');
+
+const authRouter = require('./routes/auth.router');
+
 // ...
 
 const app = express();
 
 app.use(express.json());
+
+app.use('/login', authRouter);
+
+app.use(handleError);
 
 // ...
 

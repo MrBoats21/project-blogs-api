@@ -1,4 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
+
   const User = sequelize.define('User', {
     id: { 
       type: DataTypes.INTEGER, 
@@ -14,13 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     tableName: 'users',
   })
-
-  User.associate = (models) => {
-    User.belongsTo(models.blog_posts, {
-        foreignKey: 'user_id',
-        as: 'user',
-    });
-  };
   
   return User;
 }
