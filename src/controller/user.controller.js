@@ -21,7 +21,7 @@ const controllerGetUsers = async (_req, res) => {
 
   return res.status(200).json(result);
 };
-
+  
 const controllerGetUserById = async (req, res) => {
   const { id } = req.params;
   
@@ -31,5 +31,9 @@ const controllerGetUserById = async (req, res) => {
 
   return res.status(200).json(user);
 };
-
-module.exports = { controllerCreateUser, controllerGetUsers, controllerGetUserById };
+  
+module.exports = { 
+  controllerCreateUser, 
+  controllerGetUsers, 
+  controllerGetUserById, 
+};
