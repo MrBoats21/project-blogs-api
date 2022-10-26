@@ -60,8 +60,17 @@ const handleToken = async (req, res, next) => {
     return next();
   } catch (error) {
     const e = res.status(401).json({ message: 'Expired or invalid token' });
-    throw e;
+    next(e);
   }
+};
+
+const handleCategoryName = async (req, res, next) => {
+  const { name } = req.body;
+
+  if (!name || name === '') {
+    return res.status(400).json({ message: '"name" is required' });
+  }
+  next();
 };
   
 module.exports = {
@@ -71,4 +80,5 @@ module.exports = {
   handleEmail,
   handlePassword,
   handleToken,
+  handleCategoryName,
 };  
