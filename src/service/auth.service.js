@@ -8,7 +8,7 @@ const serviceLogin = async (email, password) => {
     return { type: 'erro', message: 'Invalid fields' };
   }
 
-  const token = utils.createToken(email);
+  const token = utils.createToken(email, user.id);
 
   return token;
 };

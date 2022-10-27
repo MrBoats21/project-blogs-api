@@ -30,4 +30,8 @@ const serviceGetUserById = (id) => {
   return user;
 };
 
-module.exports = { serviceCreateUser, serviceGetUsers, serviceGetUserById };
+module.exports = { 
+  serviceCreateUser, 
+  serviceGetUsers, 
+  serviceGetUserById,
+};

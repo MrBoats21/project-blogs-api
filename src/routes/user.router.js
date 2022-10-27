@@ -1,6 +1,10 @@
 const express = require('express');
 
-const userController = require('../controller/user.controller');
+const { 
+  controllerCreateUser, 
+  controllerGetUserById, 
+  controllerGetUsers,
+} = require('../controller/user.controller');
 
 const { 
     handleDisplay,
@@ -16,11 +20,11 @@ router.post(
   handleDisplay,
   handleEmail, 
   handlePassword, 
-  userController.controllerCreateUser,
+  controllerCreateUser,
 );
 
-router.get('/', handleToken, userController.controllerGetUsers);
+router.get('/', handleToken, controllerGetUsers);
 
-router.get('/:id', handleToken, userController.controllerGetUserById);
+router.get('/:id', handleToken, controllerGetUserById);
 
 module.exports = router;
